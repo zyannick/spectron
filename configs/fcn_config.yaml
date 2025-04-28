@@ -1,0 +1,36 @@
+dataset:
+  name: molecular_spectra
+  path: data/dataset.csv
+  format: csv
+  delimiter: ","
+  num_classes: 4
+  split:
+    train: 0.8
+    val: 0.0
+    test: 0.2
+  normalize: true
+  normalize_type: "scale"
+  baseline_correction: false
+  baseline_correction_type: "savgol"
+  add_extra_channel: true
+  augment : true
+  augment_gaussian : true
+  augment_shit: false
+  augment_poisson : false
+seed: 42
+save_path: "results"
+experiment_name: 'molecular_spectra'
+model:
+  type: "deeplearning"
+  name: "FCN_1D"
+  input_size: 800
+  batch_size: 4
+  num_epochs: 200
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  optimizer: "rmsprop"
+  criterion: "focal_loss"
+  scheduler: "step_lr"
+  device: "cuda"
+  num_workers: 0
+  patience: 15

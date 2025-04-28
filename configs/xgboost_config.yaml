@@ -1,0 +1,18 @@
+dataset:
+  name: molecular_spectra
+  path: data/dataset.csv
+  format: csv
+  delimiter: ","
+  num_classes: 4
+  split:
+    train: 0.8
+    val: 0.0
+    test: 0.2
+  normalize: false
+  normalize_type: "scale"
+seed: 42
+save_path: "results"
+experiment_name: 'molecular_spectra'
+model:
+  type: "ml"
+  name: "xgb"
